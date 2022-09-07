@@ -1,3 +1,5 @@
+import { PencilSimple } from 'phosphor-react';
+
 import styles from './Sidebar.module.css';
 
 export function Sidebar() {
@@ -5,17 +7,23 @@ export function Sidebar() {
 		<aside className={styles.sidebar}>
 			<img
 				className={styles.cover}
-				src='https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=500&h=350'
+				src='https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
 			/>
 
 			<div className={styles.profile}>
-				<img className={styles.avatar} src='https://github.com/samantafluture.png' />
+				<img
+					className={styles.avatar}
+					src='https://github.com/samantafluture.png'
+				/>
 				<strong>Samanta Fluture</strong>
 				<span>Web Developer</span>
 			</div>
 
 			<footer>
-				<a href='#'>Edit your profile</a>
+				<a href='#'>
+					<PencilSimple size={20} />
+					Edit your profile
+				</a>
 			</footer>
 		</aside>
 	);

@@ -19,6 +19,18 @@
     /* starts from 0 then reduce */
 }
 
+.profile strong {
+    margin-top: 1rem;
+    color: var(--gray-100);
+    line-height: 1.6;
+}
+
+.profile span {
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
+
 .avatar {
     /* calc in W and H, or use -> box-sizing: initial; */
     width: calc(3rem + 12px);
@@ -48,4 +60,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    gap: 0.5rem;
+
+    transition: color 0.1s, background-color 0.1s;
+}
+
+.sidebar footer a:hover {
+    background-color: var(--green-500);
+    color: var(--white);
 }
