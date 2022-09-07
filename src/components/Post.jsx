@@ -2,25 +2,32 @@ import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 import styles from './Post.module.css';
 
-export function Post(props) {
+export function Post({ author, publishedAt, content }) {
+	const publishedDateFormatted = new Intl.DateTimeFormat('en', {
+		day: '2-digit',
+		month: 'long',
+		hour: '2-digit',
+		minute: '2-digit',
+	}).format(publishedAt);
+
+	const publishedDateRelativeToNow = new Intl.RelativeTimeFormat('en');
+
 	return (
 		<article className={styles.post}>
 			<header>
 				<div className={styles.author}>
-					<Avatar
-						src='https://github.com/samantafluture.png'
-					/>
+					<Avatar src={author.avatarUrl} />
 					<div className={styles.authorInfo}>
-						<strong>Samanta Fluture</strong>
-						<span>Web Developer</span>
+						<strong>{author.name}</strong>
+						<span>{author.role}</span>
 					</div>
 				</div>
 				<time
 					className={styles.time}
-					title='September 7th at 8:13'
+					title={publishedDateFormatted}
 					dateTime='2022-09-07 8:13:00'
 				>
-					Published 1 hour ago
+					{publishedDateRelativeToNow.format(-1, 'day')}
 				</time>
 			</header>
 
@@ -46,11 +53,11 @@ export function Post(props) {
 				</footer>
 			</form>
 
-            <div className={styles.commentList}>
-                <Comment />
-                <Comment />
-                <Comment />
-            </div>
+			<div className={styles.commentList}>
+				<Comment />
+				<Comment />
+				<Comment />
+			</div>
 		</article>
 	);
 }
