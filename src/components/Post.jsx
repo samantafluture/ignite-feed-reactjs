@@ -25,24 +25,20 @@ export function Post({ author, publishedAt, content }) {
 				<time
 					className={styles.time}
 					title={publishedDateFormatted}
-					dateTime='2022-09-07 8:13:00'
+					dateTime={publishedAt.toISOString()}
 				>
 					{publishedDateRelativeToNow.format(-1, 'day')}
 				</time>
 			</header>
 
 			<div className={styles.content}>
-				<p>Hi all! 👋</p>
-				<p>Just finished my new website. </p>
-				<p>
-					Check it out:{' '}
-					<a href='https://www.samantafluture.com/'>
-						samantafluture.com
-					</a>
-				</p>
-				<p>
-					<a href='#'>#portfolio</a> <a href='#'>#reactjs</a>
-				</p>
+				{content.map(line => {
+					if(line.type == 'paragraph') {
+						return <p>{line.content}</p>
+					} else if (line.type == 'link'){
+						return <p><a href=''>{line.content}</a></p>
+					}
+				})}
 			</div>
 
 			<form className={styles.commentForm}>

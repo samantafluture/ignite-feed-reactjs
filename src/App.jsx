@@ -31,7 +31,8 @@ const posts = [
 		content: [
 			{ type: 'paragraph', content: 'Hey'},
 			{ type: 'paragraph', content: 'I just wanted to let you all know that I am open to freelance work.'},
-			{ type: 'paragraph', content: 'Drop me a line! Thanks.'}
+			{ type: 'paragraph', content: 'Drop me a line! Thanks.'},
+			{ type: 'link', content: 'hello@diego3g.com'},
 		],
 		publishedAt: new Date('2022-07-09 20:02:00')
 	},
