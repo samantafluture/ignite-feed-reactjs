@@ -30,7 +30,7 @@ export function Comment() {
 
 				<footer>
                     <button>
-                        <ThumbsUp size={20} />
+                        <ThumbsUp size={24} />
                         Clap <span>20</span>
                     </button>
                 </footer>
