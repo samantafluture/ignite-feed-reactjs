@@ -14,3 +14,13 @@ Simple React.js application that mimics a social media site similar do Reddit, w
 
 - When I want to use different visual characteristics and behaviors on a component, I should pass props 
 - It's a form of communication
+
+
+## state
+
+- Variables that I want the component to monitor
+
+
+## declarative programming
+
+- Declare the conditions for your final result and not the step by step recipe (such as imperative)
