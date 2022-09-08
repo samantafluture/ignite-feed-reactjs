@@ -12,20 +12,20 @@ Simple React.js application that mimics a social media site similar do Reddit, w
 
 ## Props
 
-- When I want to use different visual characteristics and behaviors on a component, I should pass props 
-- It's a form of communication
-- Yes, you can pass functions!
+When I want to use different visual characteristics and behaviors on a component, I should pass props. 
+It's a form of communication
+Yes, you can pass functions!
 
 
 ## State
 
-- Variables that I want the component to monitor
-- Initiate the state with a data type that is the same of your variable
+Variables that I want the component to monitor
+Initiate the state with a data type that is the same of your variable.
 
 
 ## Declarative programming
 
-- Declare the conditions for your final result and not the step by step recipe (such as imperative)
+Declare the conditions for your final result and not the step by step recipe (such as imperative).
 
 ## Key
 
@@ -51,3 +51,7 @@ So what do you do instead for example, when you list change?
 You create a new value (new memory space).
 
 But why? Performance! It's easier and faster for React to **compare what it changes** in the interface.
+
+## Closures
+
+Every time you are going to update some information that depends on its last value (meaning: it depends on itself), it's a good idea to update the state using a pattern of arrow function.

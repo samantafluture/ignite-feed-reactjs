@@ -5,13 +5,15 @@ import styles from './Comment.module.css';
 
 export function Comment({ content, OnDeleteComment }) {
 	const [likeCount, setLikeCount] = useState(0);
-	
+
 	function handleDeleteComment() {
 		OnDeleteComment(content);
 	}
 
 	function handleLikeComment() {
-		setLikeCount(likeCount + 1);
+		setLikeCount((likeCount) => {
+			return likeCount + 1;
+		});
 	}
 
 	return (
