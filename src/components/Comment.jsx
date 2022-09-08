@@ -1,10 +1,17 @@
 import { ThumbsUp, Trash } from 'phosphor-react';
+import { useState } from 'react';
 import { Avatar } from './Avatar';
 import styles from './Comment.module.css';
 
 export function Comment({ content, OnDeleteComment }) {
+	const [likeCount, setLikeCount] = useState(0);
+	
 	function handleDeleteComment() {
 		OnDeleteComment(content);
+	}
+
+	function handleLikeComment() {
+		setLikeCount(likeCount + 1);
 	}
 
 	return (
@@ -37,12 +44,20 @@ export function Comment({ content, OnDeleteComment }) {
 				</div>
 
 				<footer>
-					<button>
+					<button onClick={handleLikeComment}>
 						<ThumbsUp size={24} />
-						Clap <span>20</span>
+						Clap <span>{likeCount}</span>
 					</button>
 				</footer>
 			</div>
 		</div>
 	);
 }
+
+// handleLikeComment can be replace by:
+// () => setLikeCount(likeCount + 1)
+// so the OnClick of the button gets an arrow function
+// instead of the function handleLikeComment
+// same thing!
+// but you can execute the function inside the OnClick!
+// but creating a separated function is more legible

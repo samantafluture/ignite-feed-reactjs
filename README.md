@@ -20,6 +20,7 @@ Simple React.js application that mimics a social media site similar do Reddit, w
 ## State
 
 - Variables that I want the component to monitor
+- Initiate the state with a data type that is the same of your variable
 
 
 ## Declarative programming
